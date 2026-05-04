@@ -242,3 +242,99 @@ footer {
 }
 
 }
+
+#panier {
+    position: fixed;
+    top: 0;
+    right: -400px; /* caché par défaut */
+    width: 350px;
+    height: 100vh;
+    background-color: blanchedalmond;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+#panier.ouvert {
+    right: 0; /* visible quand ouvert */
+}
+
+
+.pan {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.pan .top {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.pan .top .image img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pan .top .details h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.pan .top .details p {
+    margin: 0;
+    font-size: 13px;
+    color: #c0392b;
+    font-weight: 600;
+}
+
+.pan .bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pan .bottom .countt {
+    font-weight: 700;
+    font-size: 15px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.pan .bottom button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #c0392b;
+    background-color: transparent;
+    color: #c0392b;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pan .bottom button:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+.toggle {
+    margin-bottom: 10px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}

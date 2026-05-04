@@ -1,11 +1,14 @@
 let panier = document.getElementById("panier");
 
-function voirpanier () {
+function voirpanier() {
+    panier.classList.toggle('ouvert');
+    afficherContenuPanier();
+}
 
-    panier.innerHTML = "";
+function afficherContenuPanier() {
+    panier.innerHTML = `<button onclick="voirpanier()" class="toggle">✕</button>`;
 
     panierData.forEach((item, index) => {
-
         let produit = produits.find(p => p.id === item.id);
 
         panier.innerHTML += `
@@ -16,24 +19,31 @@ function voirpanier () {
                 </div>
                 <div class="details">
                     <h4>${produit.nom}</h4>
-                    <p>${produit.prix} FCFA</p>
+               <p>${produit.prix * item.quantite} FCFA</p>
+
                 </div>
             </div>
-
             <div class="bottom">
                 <span class="countt">${item.quantite}</span>
-
                 <button onclick="ajouter(${index})">+</button>
                 <button onclick="supprimer(${index})">-</button>
             </div>
         </div>
         `;
     });
+    let total = 0;
+    panierData.forEach(item => {
+        let produit = produits.find(p => p.id === item.id);
+        total += produit.prix * item.quantite;
+    });
+
+    panier.innerHTML += `<p class="total">Total : ${total} FCFA</p>`;
 }
+
 
 function ajouter(index) {
     panierData[index].quantite++;
-    voirpanier();
+    afficherContenuPanier();
 }
 
 function supprimer(index) {
@@ -42,5 +52,7 @@ function supprimer(index) {
     } else {
         panierData.splice(index, 1);
     }
-    voirpanier();
+    afficherContenuPanier();
+
+    
 }
