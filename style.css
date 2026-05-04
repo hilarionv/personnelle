@@ -237,7 +237,7 @@ footer {
     }
     .right textarea,
 .right a {
-    width: 156%;
+    width: 151%;
 
 }
 
@@ -337,4 +337,16 @@ footer {
     color: white;
     border: none;
     border-radius: 10px;
+}
+
+
+.gg  {
+    text-decoration: none;
+    color: black;
+    background-color: #c0392b;
+    padding: 10px;
+margin-top: 40px;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
 }

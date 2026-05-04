@@ -38,11 +38,17 @@ function afficherContenuPanier() {
     });
 
     panier.innerHTML += `<p class="total">Total : ${total} FCFA</p>`;
+
+    panier.innerHTML += `
+    <a href="commande.html" class="gg">Confirmer la commande</a>
+`;
+
 }
 
 
 function ajouter(index) {
     panierData[index].quantite++;
+    localStorage.setItem('panier', JSON.stringify(panierData));
     afficherContenuPanier();
 }
 
@@ -52,7 +58,6 @@ function supprimer(index) {
     } else {
         panierData.splice(index, 1);
     }
+    localStorage.setItem('panier', JSON.stringify(panierData));
     afficherContenuPanier();
-
-    
 }
