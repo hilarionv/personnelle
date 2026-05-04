@@ -35,10 +35,25 @@ const produits = [
       }
     });
   }
-  let count = 0;
+  let panierData = [];
 
   function ajouterAuPanier(id) {
     const produit = produits.find(p => p.id === id);
-    count++;
-    document.getElementById('compteur').textContent = count;
-  }
+
+    let item = panierData.find(p => p.id === id);
+
+    if (item) {
+        item.quantite++;
+    } else {
+        panierData.push({
+            id: id,
+            quantite: 1
+        });
+    }
+
+    // compteur total
+    let total = 0;
+    panierData.forEach(p => total += p.quantite);
+
+    document.getElementById('compteur').textContent = total;
+}
