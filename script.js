@@ -43,26 +43,25 @@ const produits = [
     document.getElementById('compteur').textContent = totalInitial;
  }
  
- function ajouterAuPanier(id) {
-    const produit = produits.find(p => p.id === id);
- 
+ function ajouterAuPanier(id, commentaire = "") {
     let item = panierData.find(p => p.id === id);
- 
+
     if (item) {
         item.quantite++;
+        item.commentaire = commentaire;
     } else {
         panierData.push({
             id: id,
-            quantite: 1
+            quantite: 1,
+            commentaire: commentaire
         });
     }
- 
-    // Sauvegarder APRÈS modification
+
     localStorage.setItem('panier', JSON.stringify(panierData));
- 
-    // Mettre à jour le compteur
+    
     let total = 0;
     panierData.forEach(p => total += p.quantite);
     document.getElementById('compteur').textContent = total;
- }
+}
+
  

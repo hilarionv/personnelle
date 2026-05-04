@@ -15,6 +15,8 @@ if (id) {
   document.querySelector('.right .prix').textContent = produit.prix + ' FCFA';
   
   document.getElementById('btn-acheter').onclick = function() {
-    ajouterAuPanier(produit.id);
-  }
+    const commentaire = document.querySelector('textarea').value;
+    ajouterAuPanier(produit.id, commentaire);
+}
+
 }
