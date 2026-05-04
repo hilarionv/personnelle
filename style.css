@@ -12,7 +12,14 @@ background-color: blanchedalmond;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
 }
+
+
 
 nav {
     display: flex;
@@ -29,8 +36,9 @@ nav a {
 
 
 main {
-    padding: 30px 20px;
+    padding: 120px 20px 30px 20px;
 }
+
 
 .menu p {
     color: #c0392b;

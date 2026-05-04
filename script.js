@@ -21,7 +21,7 @@ const produits = [
             <p class="produit">${produit.nom}</p>
             <p class="prix">${produit.prix} FCFA</p>
             <a href="panier.html?id=${produit.id}">Voir</a>
-            <a href="javascript:void(0)" onclick="ajouterAuPanier(${produit.id})">Acheter</a>
+            <a href="javascript:void(0)" onclick="ajouterAuPanier(${produit.id})">Ajouter au panier</a>
         </div>
         `;
  
