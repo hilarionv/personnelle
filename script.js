@@ -42,8 +42,23 @@ const produits = [
  if (document.getElementById('compteur')) {
     document.getElementById('compteur').textContent = totalInitial;
  }
+
+ function animation() {
+    const toast = document.createElement('div');
+    toast.innerHTML = `Produit ajouté ✓`;
+    toast.classList.add('toast');
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        document.body.removeChild(toast);
+    }, 2000); // disparaît après 2 secondes
+}
+
  
  function ajouterAuPanier(id, commentaire = "") {
+
+    animation();
+
     let item = panierData.find(p => p.id === id);
 
     if (item) {

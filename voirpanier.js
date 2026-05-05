@@ -1,12 +1,22 @@
 let panier = document.getElementById("panier");
 
+function fermerPanier() {
+    panier.classList.remove('ouvert');
+}
+
 function voirpanier() {
     panier.classList.toggle('ouvert');
     afficherContenuPanier();
 }
 
 function afficherContenuPanier() {
-    panier.innerHTML = `<button onclick="voirpanier()" class="toggle">✕</button>`;
+    panier.innerHTML = `<button onclick="fermerPanier()" class="toggle">✕</button>`;
+
+    if (panierData.length === 0) {
+        panier.innerHTML += `<p class="vide">Votre panier est vide 🛒</p>`;
+        return;
+    }
+    
 
     panierData.forEach((item, index) => {
         let produit = produits.find(p => p.id === item.id);

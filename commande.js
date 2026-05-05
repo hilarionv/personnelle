@@ -69,6 +69,11 @@ function envoyerCommande() {
 
     const url = `https://wa.me/33612345678?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
+
+    localStorage.removeItem('panier');
+panierData = [];
+document.getElementById('compteur').textContent = 0;
+
 }
 
 // Lancer l'affichage du résumé au chargement
