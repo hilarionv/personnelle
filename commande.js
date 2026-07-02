@@ -67,7 +67,7 @@ function envoyerCommande() {
     message += `\nNuméro : ${numero}`;
     message += `\nHeure de récupération : ${heure}`;
 
-    const url = `https://wa.me/33612345678?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/221784218267?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 
     localStorage.removeItem('panier');
